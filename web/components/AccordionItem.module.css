@@ -1,0 +1,11 @@
+.root {
+  border-bottom: 1px solid #333;
+}
+
+.root:last-child {
+  border: 0 none;
+}
+
+.title {
+  cursor: pointer;
+}
