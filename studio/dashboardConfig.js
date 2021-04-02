@@ -3,10 +3,11 @@ export default {
     {
       name: 'sanity-tutorials',
       options: {
-        templateRepoId: 'sanity-io/sanity-template-nextjs-landing-pages'
+        repoId: 'sanity-io/sanity-template-nextjs-landing-pages',
+        _type: 'starterTemplate'
       }
     },
-    {name: 'structure-menu'},
+    { name: 'structure-menu' },
     {
       name: 'project-info',
       options: {
@@ -39,15 +40,19 @@ export default {
             value: 'https://github.com/webdesgnr14/sanity-nextjs-landing-pages',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://sanity-nextjs-landing-pages-web-8pojbcg2.netlify.app', category: 'apps'}
+          {
+            title: 'Frontend',
+            value: 'https://sanity-nextjs-landing-pages-web-8pojbcg2.netlify.app',
+            category: 'apps'
+          }
         ]
       }
     },
-    {name: 'project-users', layout: {height: 'auto'}},
+    { name: 'project-users', layout: { height: 'auto' } },
     {
       name: 'document-list',
-      options: {title: 'Recently edited', order: '_updatedAt desc', limit: 10, types: ['page']},
-      layout: {width: 'medium'}
+      options: { title: 'Recently edited', order: '_updatedAt desc', limit: 10, types: ['page'] },
+      layout: { width: 'medium' }
     }
   ]
 }
