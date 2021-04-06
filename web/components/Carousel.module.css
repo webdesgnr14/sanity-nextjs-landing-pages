@@ -1,0 +1,67 @@
+.root {
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  height: 45vh;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.item.active {
+  opacity: 1;
+}
+
+.item figure {
+  max-width: 33.33%;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  width: 15px;
+  height: 15px;
+  text-indent: 200%;
+  overflow: hidden;
+  color: transparent;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+  border: 1px solid #333;
+}
+
+.item img {
+  width: 150px;
+  height: auto;
+}
+
+.controls {
+}
+
+.next {
+}
+
+.prev {
+}

@@ -3,9 +3,22 @@ import PropTypes from "prop-types";
 import styles from "./LogoMatrix.module.css";
 import SimpleBlockContent from "../SimpleBlockContent";
 import Figure from "../Figure";
+import Carousel from "../Carousel";
+import { chunkArray } from "../../inc/utils";
 
-function AccordionSection(props) {
+function LogoMatrix(props) {
+  let slideContainer;
+
   const { heading, subheading, logos } = props;
+
+  const slides = logos.map((item) => {
+    return <Figure node={item.logo} key={item._key} />;
+  });
+
+  if (slides.length > 2) {
+    let newSet = chunkArray(slides, 2);
+    slideContainer = newSet;
+  }
 
   return (
     <div className={styles.root}>
@@ -14,11 +27,9 @@ function AccordionSection(props) {
         <div className={styles.subheading}>
           {subheading && <SimpleBlockContent blocks={subheading} />}
         </div>
-        {logos && (
+        {slides && (
           <div className={styles.logos}>
-            {logos.map((item) => {
-              return <Figure node={item.logo} key={item._key} />;
-            })}
+            <Carousel children={slideContainer.length > 2 ? slideContainer : slides} />
           </div>
         )}
       </div>
@@ -26,10 +37,10 @@ function AccordionSection(props) {
   );
 }
 
-AccordionSection.propTypes = {
+LogoMatrix.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.array,
-  accordion: PropTypes.arrayOf(PropTypes.object),
+  logos: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default AccordionSection;
+export default LogoMatrix;
